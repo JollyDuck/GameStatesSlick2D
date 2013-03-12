@@ -6,7 +6,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class GameStatePart1 extends BasicGameState {
+public class GameStatePart2 extends BasicGameState {
 	/*
 	 * Create a variable to hold stateID - a way of storing numerically what
 	 * state is being run at any time. Initially this can be anything, as on
@@ -15,13 +15,13 @@ public class GameStatePart1 extends BasicGameState {
 	int stateID = -1;
 
 	/**
-	 * Constructor to create GameStatePart1.
+	 * Constructor to create GameStatePart2.
 	 * 
 	 * @param stateID
 	 *            The stateID you want it to hold. In this example, it should be
-	 *            '1'.
+	 *            '2'.
 	 */
-	GameStatePart1(int stateID) {
+	GameStatePart2(int stateID) {
 		this.stateID = stateID;
 	}
 
