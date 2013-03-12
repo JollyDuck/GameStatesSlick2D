@@ -21,6 +21,7 @@ public class SwapBetweenGamestates extends StateBasedGame{
 	public void initStatesList(GameContainer arg0) throws SlickException {
 		this.addState(new GameStatePart1(1));
 		this.addState(new GameStatePart2(2));
+		//Add more states here if needed.
 		
 	}
 

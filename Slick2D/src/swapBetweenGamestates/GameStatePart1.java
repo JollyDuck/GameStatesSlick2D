@@ -2,6 +2,8 @@ package swapBetweenGamestates;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
@@ -13,6 +15,10 @@ public class GameStatePart1 extends BasicGameState {
 	 * creation in the main class it is allocated in the constructor below.
 	 */
 	int stateID = -1;
+
+	// Create an image variable to be rendered later.
+
+	Image land = null;
 
 	/**
 	 * Constructor to create GameStatePart1.
@@ -26,29 +32,36 @@ public class GameStatePart1 extends BasicGameState {
 	}
 
 	@Override
-	public void init(GameContainer arg0, StateBasedGame arg1)
+	public void init(GameContainer gc, StateBasedGame arg1)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		// set land as an image (Found in data/land. Change to wherever is
+		// applicable.)
+		land = new Image("data/land.jpg");
 
 	}
 
 	@Override
-	public void render(GameContainer arg0, StateBasedGame arg1, Graphics arg2)
+	public void render(GameContainer gc, StateBasedGame arg1, Graphics g)
 			throws SlickException {
-		// TODO Auto-generated method stub
+		// Draw the land image at 0,0.
+		land.draw();
 
 	}
 
 	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int arg2)
+	public void update(GameContainer gc, StateBasedGame sbg, int delta)
 			throws SlickException {
-		// TODO Auto-generated method stub
-
+		// Create an Input reader called input.
+		Input input = gc.getInput();
+		// If the A key is pressed, then StateBasedGame sbg should enter state
+		// 2.
+		if (input.isKeyDown(Input.KEY_A)) {
+			sbg.enterState(2);
+		}
 	}
 
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
 		return stateID;
 	}
 

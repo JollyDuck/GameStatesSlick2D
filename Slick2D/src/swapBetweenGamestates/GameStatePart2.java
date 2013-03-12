@@ -2,6 +2,7 @@ package swapBetweenGamestates;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
@@ -40,10 +41,15 @@ public class GameStatePart2 extends BasicGameState {
 	}
 
 	@Override
-	public void update(GameContainer arg0, StateBasedGame arg1, int arg2)
+	public void update(GameContainer gc, StateBasedGame sbg, int arg2)
 			throws SlickException {
-		// TODO Auto-generated method stub
-
+		// Create an Input reader called input.
+		Input input = gc.getInput();
+		// If the S key is pressed, then StateBasedGame sbg should enter state
+		// 1.
+		if (input.isKeyDown(Input.KEY_S)) {
+			sbg.enterState(1);
+		}
 	}
 
 	@Override
